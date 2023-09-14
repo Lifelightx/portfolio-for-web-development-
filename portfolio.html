@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="profileimg.png" type="image/x-icon">
+    <title>Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&family=Lugrasimo&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,100&family=Roboto:ital,wght@0,300;1,100&display=swap');
+
+        @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&family=Lugrasimo&family=Montserrat+Alternates:wght@400;500&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,100&family=Roboto:ital,wght@0,300;1,100&display=swap');
+
+        @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&family=Lugrasimo&family=Montserrat+Alternates:wght@300;400;500&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,100&family=Raleway:wght@300;400&family=Roboto:ital,wght@0,300;1,100&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz@10..48&family=Lugrasimo&family=Montserrat+Alternates:wght@300;400;500&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;1,100&family=Raleway:wght@300;400&family=Roboto:ital,wght@0,300;1,100&display=swap');
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgb(57, 57, 57);
+            height: 42px;
+
+        }
+
+        .navbar {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+        }
+
+        .navbar ul {
+            display: flex;
+            margin-right: 2em;
+
+        }
+
+        .navbar ul li {
+            list-style: none;
+            padding: 2px 15px;
+
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+
+            color: rgb(255, 255, 255);
+            font-family: poppins;
+            font-weight: 300;
+            font-size: 13px;
+
+        }
+
+        .navbar ul li a:hover {
+            color: rgb(0, 255, 51);
+        }
+
+        .burger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .line {
+            width: 30px;
+            height: 3px;
+            background-color: #f9f9f9;
+            margin: 3px 0;
+        }
+
+        #logo {
+
+            height: 100px;
+            width: 100px;
+
+        }
+
+        .main-heading {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 7rem;
+            background-color: #dbdbdb;
+        }
+
+        .main-heading h1 {
+            font-family: 'Montserrat Alternates', sans-serif;
+            font-weight: 300;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .main-heading h2 {
+            font-family: Montserrat Alternates;
+            font-size: 45px;
+            text-align: center;
+        }
+
+
+        .main-heading p {
+            margin-top: 0.5rem;
+            color: rgb(107, 107, 107);
+            font-family: 'Raleway', sans-serif;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        #projct-btn {
+            background-color: #f0a600;
+            padding: 5px 20px;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Raleway';
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bolder;
+
+        }
+
+        #projct-btn a {
+            text-decoration: none;
+            color: rgb(18, 18, 18);
+        }
+
+        .sub-heading {
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            margin-top: 2rem;
+            overflow: hidden;
+            flex-wrap: wrap;
+        }
+
+        .boxes {
+            border: 1px solid rgb(199, 199, 199);
+            width: 33%;
+            height: 13rem;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 5px;
+            font-family: Raleway;
+
+
+        }
+
+        .boxes p {
+            padding-top: 5px;
+            font-size: 14px;
+            color: #4d4d4d;
+        }
+
+        .boxes img {
+            height: 3rem;
+            box-shadow: 0 0 5px rgb(209, 209, 209);
+            border-radius: 50%;
+        }
+
+        #aboutme {
+            padding: 3rem 5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 2rem;
+            background-color: #dbdbdb;
+        }
+
+        #projects {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 2rem;
+            background-color: #dbdbdb;
+        }
+
+        #aboutme h1 {
+            font-family: 'Montserrat Alternates';
+            font-size: 35px;
+
+        }
+
+        #aboutme p {
+            margin-top: 2rem;
+            font-family: Raleway;
+            line-height: 22px;
+            text-align: justify;
+
+        }
+
+        #projects {
+            background-color: white;
+
+        }
+
+        #projects h1 {
+            font-family: 'Montserrat Alternates';
+            font-size: 35px;
+            margin-bottom: 1rem;
+        }
+
+        .project-list {
+            font-family: 'Raleway';
+            padding: 1rem 1rem;
+            border: 1px solid rgb(201, 201, 201);
+            margin: 3px;
+            border-radius: 5px;
+            height: 20rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .project-list p {
+            padding: 1rem 0;
+        }
+
+        .btn-project a {
+
+            text-decoration: none;
+            padding: .2rem 2rem;
+            color: rgb(0, 0, 0);
+        }
+
+        .btn-project {
+            background-color: #f0a600;
+            border: none;
+            padding: 5px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 4px rgb(168, 168, 168);
+
+        }
+
+        #contact {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 5rem 0;
+            background-color: #dbdbdb;
+        }
+
+        #contact h1 {
+            font-family: 'Montserrat Alternates';
+            font-size: 35px;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+        }
+
+        #contact p {
+            font-family: 'Raleway';
+        }
+
+        .btn-contact {
+            background-color: #f05000;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-top: 1rem;
+            box-shadow: 0 0 4px rgb(168, 168, 168);
+        }
+
+        .btn-contact a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-weight: 600;
+            letter-spacing: .5px;
+            font-family: 'Raleway';
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-family: 'Raleway';
+            font-size: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                height: 3rem;
+            }
+
+            .navbar {
+                display: flex;
+                justify-content: flex-end;
+                margin-right: 1rem;
+            }
+
+            .burger {
+                display: flex;
+
+            }
+
+            .nav-links {
+                flex-direction: column;
+                background-color: #33333395;
+                position: absolute;
+                top: 24px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                display: none;
+                transition: all 15s ease-in-out;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 5px 0;
+            }
+
+            .burger {
+                display: flex;
+            }
+            .sub-heading{
+                flex-direction: column;
+                
+            }
+            .boxes{
+                width: 100%;
+                box-sizing: border-box;
+                margin: 1px 0;
+            }
+            #aboutme{
+                padding: 3rem 10px;
+                text-align: justify;
+                
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img id="logo" src="https://github.com/Lifelightx/PERSONALDOCS/blob/main/logomain.png?raw=true" alt="myLogo">
+        </div>
+        <nav class="navbar">
+            <div class="nav-links">
+                <ul class="nav-links">
+                    <li><a href="">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#aboutme">About Me</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="">More</a></li>
+                </ul>
+            </div>
+            <div class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+    <section class="main-heading">
+        <h1>Hi, I'm Jeeban</h1>
+        <h2>Welcome to My portfolio</h2>
+        <p><span id="html">HTML</span> | <span id="css">CSS</span> | <span id="js">JAVASCRIPT</span> </p>
+        <button id="projct-btn"><a href="#projects">View Projects</a></button>
+    </section>
+    <section class="sub-heading">
+        <div class="boxes">
+            <img src="https://github.com/Lifelightx/PERSONALDOCS/blob/main/img1.png?raw=true" alt="b">
+            <h3>User-Centric Design</h3>
+            <p>Experience a user friendly UI with interactive designs.</p>
+        </div>
+        <div class="boxes">
+            <img src="https://github.com/Lifelightx/PERSONALDOCS/blob/main/img2.png?raw=true" alt="a">
+            <h3>Modern web Technologies</h3>
+            <p>Working with new techlogoies to improve the products.</p>
+        </div>
+        <div class="boxes">
+            <img src="https://github.com/Lifelightx/PERSONALDOCS/blob/main/img3.png?raw=true" alt="c">
+            <h3>Team Player</h3>
+            <p>I thrive in collaborative environments where teamwork is essential to achieving exceptional results.</p>
+        </div>
+    </section>
+    <div id="aboutme">
+        <h1>About Me</h1>
+        <p>Hi, I'm Jeebanjyoti Mallik. I have a strong foundation in Web development and a Master's in Computer
+            Applications (MCA). I'm passionate about web development and enjoy creating responsive and user-friendly
+            websites. My skills include HTML, CSS, JavaScript, Tailwind CSS, Python, C, and Java. I'm committed to
+            delivering high-quality web solutions that meet the needs of clients and users alike.</p>
+    </div>
+    <section>
+        <div id="projects">
+            <h1>Projects</h1>
+            <div class="project-main">
+                <div class="project-list">
+                    <img src="" alt="">
+                    <h2>To-Do list</h2>
+
+                    <p class="des-projects">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non
+                        voluptatem deserunt ducimus modi eligendi nisi pariatur, alias temporibus porro magnam, odit
+                        dolorem sint nostrum quis blanditiis, rem amet? Laudantium pariatur quae dolore maiores
+                        accusantium, debitis recusandae aliquam. Dolore officiis fugit consequatur velit labore
+                        accusantium!</p>
+                    <button class="btn-project"><a href="">Open</a></button>
+                </div>
+                <div class="project-list">
+                    <img src="" alt="">
+                    <h2>Calculator</h2>
+
+                    <p class="des-projects">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non
+                        voluptatem deserunt ducimus modi eligendi nisi pariatur, alias temporibus porro magnam, odit
+                        dolorem sint nostrum quis blanditiis, rem amet? Laudantium pariatur quae dolore maiores
+                        accusantium, debitis recusandae aliquam. Dolore officiis fugit consequatur velit labore
+                        accusantium!</p>
+                    <button class="btn-project"><a href="">Open</a></button>
+                </div>
+                <div class="project-list">
+                    <img src="" alt="">
+                    <h2>Image Gallery</h2>
+
+                    <p class="des-projects">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non
+                        voluptatem deserunt ducimus modi eligendi nisi pariatur, alias temporibus porro magnam, odit
+                        dolorem sint nostrum quis blanditiis, rem amet? Laudantium pariatur quae dolore maiores
+                        accusantium, debitis recusandae aliquam. Dolore officiis fugit consequatur velit labore
+                        accusantium!</p>
+                    <button class="btn-project"><a href="">Open</a></button>
+                </div>
+                <div class="project-list">
+                    <img src="" alt="">
+                    <h2>Contact form</h2>
+
+                    <p class="des-projects">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non
+                        voluptatem deserunt ducimus modi eligendi nisi pariatur, alias temporibus porro magnam, odit
+                        dolorem sint nostrum quis blanditiis, rem amet? Laudantium pariatur quae dolore maiores
+                        accusantium, debitis recusandae aliquam. Dolore officiis fugit consequatur velit labore
+                        accusantium!</p>
+                    <button class="btn-project"><a href="">Open</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div id="contact">
+            <h1>Contact Me</h1>
+            <p>If you'd like to collaborate or have any inquiries, feel free to get in touch with me.</p>
+            <button class="btn-contact"><a href="mailto:jeebanjyotimallik01@gmail.com">Email me</a></button>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Jeebanjyoti | Web Developer Portfolio</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const burger = document.querySelector(".burger");
+            const navLinks = document.querySelector(".nav-links");
+
+            burger.addEventListener("click", function () {
+                navLinks.classList.toggle("active");
+            });
+        });
+
+    </script>
+</body>
+
+</html>
